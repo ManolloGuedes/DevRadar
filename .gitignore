@@ -88,3 +88,5 @@ typings/
 .dynamodb/
 
 backend/yarn.lock
+
+yarn.lock
