@@ -6,7 +6,7 @@ module.exports = {
   async index(req, res) {
     const devs = await Dev.find();
 
-    return res.json({devs});
+    return res.json(devs);
   },
 
   async store(req, res) {
@@ -37,9 +37,7 @@ module.exports = {
       });
     }
 
-    return res.json({
-      dev
-    });
+    return res.json(dev);
   },
 
   async update(req, res) {
@@ -55,7 +53,7 @@ module.exports = {
         }
       );
 
-      return res.json({ dev });
+      return res.json(dev);
     } catch(error) {
       console.error(error);
       res.json({error: 'error'});
@@ -67,6 +65,6 @@ module.exports = {
     
     let dev = await Dev.findOneAndDelete(github_username);
 
-    res.json({ dev });
+    res.json(dev);
   },
 };
