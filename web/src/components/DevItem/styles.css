@@ -49,3 +49,18 @@ li.dev-item a {
 li.dev-item a:hover {
   color: #5a2ea6;
 }
+
+li.dev-item .user-action {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0.3s, opacity 0.3s linear;
+  margin-left: auto;
+  align-self: flex-start;
+  color: #8e4cff;
+  cursor: pointer;
+}
+
+li.dev-item:hover .user-action {
+  visibility: visible;
+  opacity: 1;
+}

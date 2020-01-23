@@ -1,9 +1,16 @@
 import React from 'react';
+import { DeleteOutline } from '@material-ui/icons';
 
 import './styles.css';
 
 function DevItem(props) {
-  const { dev } = props;
+  const { dev, onDelete } = props;
+  
+  function removeDev() {
+    onDelete({
+      github_username: dev.github_username
+    });
+  }
 
   return (
     <li className="dev-item">
@@ -12,6 +19,11 @@ function DevItem(props) {
         <div className="user-info">
           <strong>{dev.name}</strong>
           <span>{dev.techs.join(', ')}</span>
+        </div>
+        <div className="user-action">
+          <div title="Deletar" onClick={() => {removeDev()}}>
+            <DeleteOutline style={{ fontSize: 18 }}/>
+          </div>
         </div>
       </header>
       <p>{dev.bio}</p>

@@ -29,6 +29,15 @@ function App() {
     setDevs([...devs, response.data]);
   };
 
+  async function handleDeleteDev(data) {
+
+    const github_username = data.github_username;
+
+    const response = await api.delete(`/devs/${github_username}`);
+
+    setDevs(devs.filter(dev => dev.github_username != github_username));
+  };
+
   return (
     <div id="app">
       <aside>
@@ -38,7 +47,7 @@ function App() {
       <main>
         <ul>
           {devs.map(dev => (
-            <DevItem key={dev._id} dev={dev} />
+            <DevItem key={dev._id} dev={dev} onDelete={handleDeleteDev} />
           ))}
         </ul>
       </main>
