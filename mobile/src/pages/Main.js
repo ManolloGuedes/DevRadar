@@ -130,9 +130,9 @@ const styles = StyleSheet.create({
   avatar: {
     width: 54,
     height: 54,
-    borderRadius: 4,
+    borderRadius: 50,
     borderWidth: 4,
-    borderColor: '#fff'
+    borderColor: '#efe7ff'
   },
 
   callout: {
